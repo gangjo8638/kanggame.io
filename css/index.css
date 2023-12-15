@@ -201,7 +201,7 @@ figure .fixed01{
     width: 100%; height: 100vh;
     
     /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
-    background-image: url(../img/게임.jpg);
+    background-image: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EA%B2%8C%EC%9E%84.jpg);
     background-repeat: no-repeat; /* 배경이미지X */
     background-size: cover; /* 요소를 비율에 맞게 커버 */
     background-position: center; /* 이미지를 요소의 정가운데로 처리 */
@@ -663,7 +663,7 @@ section .inner #flip {
   
 }
 .slider .ss1{/*no-repeat <- 한번만 나오게*/
-  background: url(../img/메이플2.png) no-repeat center center;
+  background: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EB%A9%94%EC%9D%B4%ED%94%8C2.png) no-repeat center center;
   background-size: cover;
 
   width: 100%;
@@ -678,7 +678,7 @@ section .inner #flip {
   
 }
 .slider .ss2{/*no-repeat <- 한번만 나오게*/
-  background: url(../img/롤.png) no-repeat center center;
+  background: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EB%A1%A4.png) no-repeat center center;
   background-size: cover;
 
   width: 100%;
@@ -690,7 +690,7 @@ section .inner #flip {
   z-index: 0;
 }
 .slider .ss3{/*no-repeat <- 한번만 나오게*/
-  background: url(../img/오버워치.png) no-repeat center center;
+  background: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98.png) no-repeat center center;
   background-size: cover;
 
 
@@ -806,7 +806,7 @@ section .inner #flip {
   width: 100%; height: 90vh;
   
   /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
-  background-image: url(/img/컴퓨터게임배경.jpg);
+  background-image: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B2%8C%EC%9E%84%EB%B0%B0%EA%B2%BD.jpg);
   background-repeat: no-repeat; /* 배경이미지X */
   background-size: cover; /* 요소를 비율에 맞게 커버 */
   background-position: center; /* 이미지를 요소의 정가운데로 처리 */
