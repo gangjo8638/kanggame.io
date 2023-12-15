@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.text-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.animated-text {
+    opacity: 0;
+    font-size: 2em;
+    margin: 0 10px;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(20px);
+  
+}
+
+
+.animated-text[data-position="left"] {
+    align-self: flex-end;
+    
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+.animated-text[data-position="center"] {
+    margin: 0 auto;
+}
+
+.animated-text[data-position="right"] {
+    align-self: flex-start;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
