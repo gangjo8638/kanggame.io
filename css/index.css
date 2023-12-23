@@ -1,4 +1,8 @@
 @charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@400&display=swap");
+:root {
+	--adjust-size: 0px; /* 必要に応じて */
+}
 *{
     margin: 0px;
     padding: 0px;
@@ -201,7 +205,7 @@ figure .fixed01{
     width: 100%; height: 100vh;
     
     /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
-    background-image: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EA%B2%8C%EC%9E%84.jpg);
+    background-image: url(../img/게임.jpg);
     background-repeat: no-repeat; /* 배경이미지X */
     background-size: cover; /* 요소를 비율에 맞게 커버 */
     background-position: center; /* 이미지를 요소의 정가운데로 처리 */
@@ -663,7 +667,7 @@ section .inner #flip {
   
 }
 .slider .ss1{/*no-repeat <- 한번만 나오게*/
-  background: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EB%A9%94%EC%9D%B4%ED%94%8C2.png) no-repeat center center;
+  background: url(../img/메이플2.png) no-repeat center center;
   background-size: cover;
 
   width: 100%;
@@ -678,7 +682,7 @@ section .inner #flip {
   
 }
 .slider .ss2{/*no-repeat <- 한번만 나오게*/
-  background: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EB%A1%A4.png) no-repeat center center;
+  background: url(../img/롤.png) no-repeat center center;
   background-size: cover;
 
   width: 100%;
@@ -690,7 +694,7 @@ section .inner #flip {
   z-index: 0;
 }
 .slider .ss3{/*no-repeat <- 한번만 나오게*/
-  background: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EC%98%A4%EB%B2%84%EC%9B%8C%EC%B9%98.png) no-repeat center center;
+  background: url(../img/오버워치.png) no-repeat center center;
   background-size: cover;
 
 
@@ -806,7 +810,7 @@ section .inner #flip {
   width: 100%; height: 90vh;
   
   /* 배경이미지는 최소 1920*960으로 제작해야 문제가 안생김 */
-  background-image: url(https://raw.githubusercontent.com/gangjo8638/kanggamestory/main/img/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B2%8C%EC%9E%84%EB%B0%B0%EA%B2%BD.jpg);
+  background-image: url(/img/컴퓨터게임배경.jpg);
   background-repeat: no-repeat; /* 배경이미지X */
   background-size: cover; /* 요소를 비율에 맞게 커버 */
   background-position: center; /* 이미지를 요소의 정가운데로 처리 */
@@ -919,7 +923,7 @@ section .inner #flip {
 .section4 .inner{
   position: relative;
   width: 1280px;
-  height: 350px;
+  height: 400px;
   margin: 0 auto;
 
 }
@@ -942,7 +946,7 @@ section .inner #flip {
 }
 .section4 .inner p::before{
   position: absolute;
-  top: 0px;
+  top: -10px;
   left: 520px;
   display: flex;
   justify-content: center;
@@ -1015,6 +1019,340 @@ section .inner #flip {
 .section4 .inner a #lol:hover{
   transform: scale(1.2);
 }
+
+/*흔들리는 사진*/
+.section4 .inner p {
+	line-height: 1;
+}
+.section4 .inner a {
+	color: crimson;
+	text-decoration: none;
+}
+.section4 .inner img {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+}
+.section4 .inner #gallery {
+	position: relative;
+  top:40px;
+	left: calc(-1 * var(--adjust-size));
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 20px;
+	max-width: 100vw;
+	padding: 20px;
+	-webkit-perspective: 0;
+	perspective: 0;
+}
+#gallery figure:nth-child(7n) {
+	--duration: 1s;
+	--pin-color: crimson;
+}
+#gallery figure:nth-child(7n + 1) {
+	--duration: 1.8s;
+	--pin-color: hotpink;
+}
+#gallery figure:nth-child(7n + 2) {
+	--duration: 1.3s;
+	--pin-color: magenta;
+}
+#gallery figure:nth-child(7n + 3) {
+	--duration: 1.5s;
+	--pin-color: orangered;
+}
+#gallery figure:nth-child(7n + 4) {
+	--duration: 1.1s;
+	--pin-color: darkorchid;
+}
+#gallery figure:nth-child(7n + 5) {
+	--duration: 1.6s;
+	--pin-color: deeppink;
+}
+#gallery figure:nth-child(7n + 6) {
+	--duration: 1.2s;
+	--pin-color: mediumvioletred;
+}
+#gallery figure:nth-child(3n) {
+	--angle: 3deg;
+}
+#gallery figure:nth-child(3n + 1) {
+	--angle: -3.3deg;
+}
+#gallery figure:nth-child(3n + 2) {
+	--angle: 2.4deg;
+}
+#gallery figure:nth-child(odd) {
+	--direction: alternate;
+}
+#gallery figure:nth-child(even) {
+	--direction: alternate-reverse;
+}
+#gallery figure {
+	--angle: 3deg;
+	--count: 5;
+	--duration: 1s;
+	--delay: calc(-0.5 * var(--duration));
+	--direction: alternate;
+	--pin-color: red;
+
+	position: relative;
+	display: inline-block;
+	margin: var(--adjust-size);
+	padding: 0.5rem;
+	border-radius: 5px;
+	box-shadow: 0 7px 8px rgba(0, 0, 0, 0.4);
+	width: 100%;
+	height: auto;
+	text-align: center;
+	background-color: ghostwhite;
+	background-image: url("https://images.unsplash.com/photo-1629968417850-3505f5180761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTMzMjQ3ODJ8&ixlib=rb-4.0.3&q=80&w=500");
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: multiply;
+
+	transform-origin: center 0.22rem;
+	will-change: transform;
+	break-inside: avoid;
+	overflow: hidden;
+	outline: 1px solid transparent;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+#gallery.active figure {
+	animation-duration: var(--duration), 1.5s;
+	animation-delay: var(--delay),
+		calc(var(--delay) + var(--duration) * var(--count));
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: var(--count), 1;
+	animation-direction: var(--direction), normal;
+	animation-fill-mode: both;
+	animation-name: swing, swingEnd;
+}
+#gallery figure:after {
+	position: absolute;
+	top: 0.22rem;
+	left: 50%;
+	width: 0.7rem;
+	height: 0.7rem;
+	content: "";
+	background: var(--pin-color);
+	border-radius: 50%;
+	box-shadow: -0.1rem -0.1rem 0.3rem 0.02rem rgba(0, 0, 0, 0.5) inset;
+	filter: drop-shadow(0.3rem 0.15rem 0.2rem rgba(0, 0, 0, 0.5));
+	transform: translateZ(0);
+	z-index: 2;
+}
+.section4 .inner figure img {
+	aspect-ratio: 1 /1;
+	width: 100%;
+	object-fit: cover;
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	z-index: 1;
+}
+.section4 .inner figure figcaption {
+	font-size: 14px;
+	font-weight: 400;
+	z-index: 1;
+}
+.section4 .inner figure h2 {
+	color: crimson;
+	font-size: 22px;
+}
+.section4 .inner figure p {
+	font-size: 17px;
+}
+.section4 .inner figure small {
+	font-size: 12px;
+}
+.section4 .inner figure > div {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@keyframes swing {
+	0% {
+		transform: rotate3d(0, 0, 1, calc(-1 * var(--angle)));
+	}
+	100% {
+		transform: rotate3d(0, 0, 1, var(--angle));
+	}
+}
+@keyframes swingEnd {
+	to {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+}
+#info {
+	position: relative;
+	text-align: center;
+	z-index: 1;
+}
+#info a {
+	font-size: 1.1rem;
+}
+/*
+@media (orientation: landscape) {
+	#gallery {
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	}
+}
+*/
+@media (min-width: 800px) {
+	#gallery {
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	}
+}
+
+
+/*section5*/
+.section5{
+  width: 100%;
+  background-color: white;
+}
+
+.section5 .inner{
+  position: relative;
+  width: 1280px;
+  height: 600px;
+  margin: 0 auto;
+  font-family: 'Noto Sans KR', sans-serif; /*기본 폰트*/
+
+}
+
+.section5 .inner h1{
+  position: relative;
+  top: 50px;
+  text-align: center;
+  color: #424242;
+  font-size: 30px;
+  font-weight: bold;
+}
+.section5 .inner #declaration{
+  position: relative;
+  top: 70px;
+  text-align: center;
+  font-size: 17px;
+  color: #000000;
+}
+.section5 .inner .soild{
+  position: relative;
+  top: 120px;
+  width: 100%;
+  height: 0.5px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; 
+  background-color:#d0d0d0;
+}
+.section5 .inner ul{
+  position: relative;
+  top: 190px;
+  width: 100%;
+  height: 250px;
+ 
+}
+.section5 .inner ul li{
+  position: relative;
+  margin-right: 30px;
+  float: left;
+  width: 250px;
+  height: 100%;
+  border-radius: 40px;
+  background-color: #3e3e3e;
+
+}
+.section5 .inner ul li:nth-child(1){
+  background-color: #dcdcdc;
+}
+.section5 .inner ul li:nth-child(2){
+  background-color: #838383;
+  color: white;
+}
+.section5 .inner ul li:nth-child(3){
+  background-color: #313131;
+  color: white;
+}
+.section5 .inner ul li:last-child{
+  position: absolute;
+  right: 0px;
+  margin-right: 0px;
+  width: 440px;
+  background: linear-gradient(45deg, Violet, Orange);
+  color: white;
+  
+
+}
+.section5 .inner ul li p{
+  position: relative;
+  margin: 30px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.section5 .inner ul li:nth-child(4) p{
+  font-size: 25px;
+  text-align: center;
+}
+
+.section5 .inner ul li .sports_esports{
+  position: relative;
+  top: 70px;
+  left: 150px;
+  transform: scale(7);
+
+}
+.section5 .inner ul li:nth-child(4) .sports_esports{
+  position: relative;
+  top: 30px;
+  left: 210px;
+ 
+  transform: scale(6);
+  margin: 0 auto;
+  
+}
+.section5 .inner ul li #p1{
+  position: relative;
+  width: 100px;
+  text-align: center;
+  border-radius: 20px;
+  top: -80px;
+  left: -25px;
+  padding: 5px 10px;
+  font-weight: normal;
+  font-size: 15px;
+  background-color: white;
+}
+.section5 .inner #p2{
+  position: relative;
+  top: 220px;
+  text-align: center;
+  color: #9a9a9a;
+}
+.section5 .inner #p2 span{
+  font-weight: bold;
+  color: #757575;
+}
+
+.section5 .inner .soild1{
+  position: relative;
+  top: 260px;
+  width: 100%;
+  height: 0.5px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; 
+  background-color:#d0d0d0;
+}
+
+
+
 
 
 /*footer*/
@@ -1179,6 +1517,23 @@ footer .inner #copy{
   font-family: 'Noto Sans KR', sans-serif; /*기본 폰트*/
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 미디어쿼리 */
