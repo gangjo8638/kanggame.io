@@ -57,3 +57,37 @@ Swaying photo gallery - hover event @wakana-k - https://codepen.io/wakana-k/pen/
 		animStart();
 	};
 })();
+
+
+//sidebar 스크립트
+function toggleSidebar() {
+	var sidebar = document.getElementById("sidebar");
+	var main = document.getElementById("main");
+	var openBtn = document.getElementById("openBtn");
+	var closeBtn = document.getElementById("closeBtn");
+
+	if (sidebar.classList.contains("open")) {
+	  sidebar.classList.remove("open");
+	  openBtn.style.display = "block";
+	  closeBtn.style.display = "none";
+	  main.style.marginLeft = "0";
+	} else {
+	  sidebar.classList.add("open");
+	  openBtn.style.display = "none";
+	  closeBtn.style.display = "block";
+	  main.style.marginLeft = "250px";
+	}
+}
+
+function closeSidebar() {
+	var sidebar = document.getElementById("sidebar");
+	var main = document.getElementById("main");
+	var openBtn = document.getElementById("openBtn");
+	var closeBtn = document.getElementById("closeBtn");
+
+	sidebar.classList.remove("open");
+	openBtn.style.display = "block";
+	closeBtn.style.display = "none";
+	main.style.marginLeft = "0";
+}
+
