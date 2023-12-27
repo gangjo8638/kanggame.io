@@ -18,6 +18,99 @@ ul, li{
     list-style: none;
 }
 
+/*로딩창*/
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #545454;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  z-index: 9999;
+}
+
+.loader {
+  border: 8px solid #545454;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.floating-text {
+  position: absolute;
+  font-size: 90px;
+  opacity: 0;
+  font-family: 'Abril Fatface', serif;/*두껍게 고급*/
+
+}
+
+#text1 {
+  position: absolute;
+  top: 60px;
+  left: 50px;
+  animation: floatAnimationText 2.1s ease-in-out forwards;
+  animation-delay: 0.3s; /* 0.3초의 딜레이 추가 */
+  word-spacing: 15px;
+}
+
+#text2 {
+  position: absolute;
+  top: 60px;
+  left: 630px;
+  animation: floatAnimationText 2.1s ease-in-out forwards;
+  animation-delay: 0.4s; /* 0.3초의 딜레이 추가 */
+}
+#text1 span, #text2 span{
+  color: #3498db;
+}
+
+@keyframes floatAnimationText {
+  0% {
+      opacity: 0;
+      transform: translateY(140px);
+  }
+  15% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  75% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-140px);
+  }
+}
+
+.content {
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /*sidebar시작*/
 #sidebar {
   height: 100%;
