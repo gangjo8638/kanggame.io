@@ -1,15 +1,3 @@
-//글자
-document.addEventListener('DOMContentLoaded', function() {
-    const textElements = document.querySelectorAll('.animated-text');
-
-    textElements.forEach((textElement, index) => {
-        setTimeout(() => {
-            textElement.textContent = textElement.getAttribute('data-text');
-            textElement.style.opacity = 1;
-            textElement.style.transform = 'translateY(0)';
-        }, index * 1000);
-    });
-});
 
 
 //햄버거
@@ -90,4 +78,47 @@ function closeSidebar() {
 	closeBtn.style.display = "none";
 	main.style.marginLeft = "0";
 }
+
+
+
+
+// 페이지 로딩 후 화면을 보여주는 함수
+function showContent() {
+    const loadingContainer = document.querySelector('.loading-container');
+    loadingContainer.style.opacity = 0;
+    loadingContainer.style.pointerEvents = 'none';
+
+    const content = document.querySelector('.content');
+    content.classList.add('visible');
+
+    // 로딩이 끝나면 스크롤 허용
+    document.body.style.overflow = 'auto';
+
+    // 다른 요소에 대한 트랜지션 적용
+    const otherElement = document.querySelector('.other-element');
+    otherElement.style.transition = 'opacity 1s ease, transform 1s ease';
+
+    // 글자가 나타나는 코드 호출
+    showText();
+}
+
+// 글자가 나타나는 코드
+function showText() {
+    const textElements = document.querySelectorAll('.animated-text');
+
+    textElements.forEach((textElement, index) => {
+        setTimeout(() => {
+            textElement.textContent = textElement.getAttribute('data-text');
+            textElement.style.opacity = 1;
+            textElement.style.transform = 'translateY(0)';
+        }, index * 1000);
+    });
+}
+
+// 페이지 로딩 후 2.5초 후에 본문을 보여줌 (예시로 2.5초 설정)
+setTimeout(showContent, 2500);
+
+// 로딩 중에 스크롤 막기
+document.body.style.overflow = 'hidden';
+
 
